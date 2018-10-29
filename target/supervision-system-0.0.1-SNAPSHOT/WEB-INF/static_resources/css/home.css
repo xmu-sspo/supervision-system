@@ -1,0 +1,36 @@
+body {
+    background-image:url("../images/background.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+div{
+    display: block;
+}
+
+#logo_img{
+    margin-left: 15%;
+    margin-top: 30px;
+}
+
+#keywords{
+    margin-left: 60%;
+    margin-top: 70px;
+    width: 80%;
+
+}
+
+#search{
+    margin-left: 422%;
+    margin-top: 70px;
+}
+
+#deal_history{
+    margin-top: 110px;
+    padding-left: 40%;
+}
+
+#history{
+    padding-left: 30%;
+}

@@ -1,0 +1,10 @@
+xmu\sspo\controller\TopicController.class
+xmu\sspo\model\Topic.class
+xmu\sspo\model\News.class
+xmu\sspo\config\DataConfig.class
+xmu\sspo\service\impl\TopicService.class
+xmu\sspo\model\Text.class
+xmu\sspo\controller\TestController.class
+xmu\sspo\service\impl\SolrTest.class
+xmu\sspo\dao\TopicDao.class
+xmu\sspo\controller\SolrController.class
