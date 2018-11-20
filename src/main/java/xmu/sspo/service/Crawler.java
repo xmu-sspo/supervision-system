@@ -24,7 +24,7 @@ public class Crawler {
 		System.out.println(formatTime.format(startTime));
 		
 		// ÕıÊ½´úÂë
-//		String commands[] = {"GuanchaSpider", "SinaSpider"};		
+//		String commands[] = {"GuanchaSpider", "SinaSpider", "HuanqiuSpider", "BjnewsSpider"};		
 //		for(String exp: commands) {
 //			String command = "scrapy crawl " + exp;//cmdÃüÁî   	
 //	    	File scrapyPath = new File("D:\\sspo\\myScrapy\\MyScrapy");
