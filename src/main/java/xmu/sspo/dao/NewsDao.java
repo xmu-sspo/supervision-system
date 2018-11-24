@@ -3,6 +3,7 @@ package xmu.sspo.dao;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -12,27 +13,33 @@ import xmu.sspo.model.News;
 public interface NewsDao {
 	
 	/**
-	 *  ËµÃ÷£º¸ù¾İid»ñÈ¡ÏêÇé
+	 *  Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
 	 * @param id
 	 * @return News
 	 */
 	News get(Long id);
 	
 	/**
-	 *   ËµÃ÷£º»ñÈ¡ĞÂÎÅÁĞ±í
+	 * è·å–æ‰€æœ‰çš„æ–°é—»
+	 * @return List<News>
+	 */
+	List<News> listNewsPerMonth(Map<String, Object> month);
+	
+	/**
+	 *   Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ğ±ï¿½
 	 * @return List<News>
 	 */
 	List<News> listNews(int page);
 	
 	/**
-	 *  ËµÃ÷£º¸ù¾İidÁĞ±í»ñÈ¡ÏêÇé
+	 *  Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½Ğ±ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
 	 * @param id
 	 * @return News
 	 */
 	ArrayList<News> getNewsListByIdList(ArrayList<Integer> newsList);
 	
 	/**
-	 *  ËµÃ÷£º»ñÈ¡ĞÂÎÅ×ÜÌõÊı
+	 *  Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @return Long
 	 */
 	BigInteger getNewsCount();

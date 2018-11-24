@@ -42,7 +42,7 @@ public class News {
 	 * 新闻日期和时间
 	 */
 	@Field
-	private String time;
+	private Date time;
 	
 	/**
 	 * 作者
@@ -73,7 +73,7 @@ public class News {
 		super();
 	}
 
-	public News(Long id, String data_from, String url, String title, String content, String time, String author,
+	public News(Long id, String data_from, String url, String title, String content, Date time, String author,
 			Long browse, Long comment, Long click) {
 		super();
 		this.id = id;
@@ -128,11 +128,11 @@ public class News {
 		this.content = content;
 	}
 
-	public String getTime() {
+	public Date getTime() {
 		return time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 

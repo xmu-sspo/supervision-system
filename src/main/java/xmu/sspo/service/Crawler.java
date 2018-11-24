@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Crawler {
 	
-	@Scheduled(fixedDelay=3000)//每三秒跑一次
+//	@Scheduled(fixedDelay=3000)//每三秒跑一次
 	public void doCrawler() {
 		// 定时器测试
 		SimpleDateFormat formatTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
