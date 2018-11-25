@@ -15,7 +15,7 @@ import xmu.sspo.model.Topic;
 @Component
 public class Cluster {
 	//对近30天的新闻进行聚类，一天一次，每天6点进行
-	@Scheduled(cron="0 0 6 * * ?")
+//	@Scheduled(cron="0 0 6 * * ?")
 	public void month_Cluster() {
 		System.out.println("month_cluster");
 		String[] args1 = new String[] { "python", "D:\\莹\\大创\\舆情监督\\中文分词\\new_kmeans.py", String.valueOf(30)}; 
@@ -40,7 +40,7 @@ public class Cluster {
 	}
 	
 	//对近7天的新闻进行聚类，一天一次，每天6点进行
-	@Scheduled(cron="0 0 6 * * ?")
+//	@Scheduled(cron="0 0 6 * * ?")
 	public void week_Cluster() {
 		System.out.println("week_cluster");
 		String[] args1 = new String[] { "python", "D:\\莹\\大创\\舆情监督\\中文分词\\new_kmeans.py", String.valueOf(7)}; 
@@ -65,7 +65,7 @@ public class Cluster {
 	}
 	
 	//对近3天的新闻进行聚类，一天一次，每天6点进行
-	@Scheduled(cron="0 0 6 * * ?")
+//	@Scheduled(cron="0 0 6 * * ?")
 	public void threedays_Cluster() {
 		System.out.println("threedays_cluster");
 		String[] args1 = new String[] { "python", "D:\\莹\\大创\\舆情监督\\中文分词\\new_kmeans.py", String.valueOf(3)}; 
@@ -90,7 +90,7 @@ public class Cluster {
 	}
 	
 	//对当天的新闻进行聚类，2分钟一次
-	@Scheduled(cron="0/120 * * * * ?")
+//	@Scheduled(cron="0/120 * * * * ?")
 	public void today_Cluster() {
 		System.out.println("today_cluster");
 		String[] args1 = new String[] { "python", "D:\\莹\\大创\\舆情监督\\中文分词\\new_kmeans.py", String.valueOf(1)}; 

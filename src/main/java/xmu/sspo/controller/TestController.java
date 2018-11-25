@@ -36,7 +36,7 @@ public class TestController {
 	
 	@RequestMapping("/chart_line")
 	public ModelAndView getChart_line() {
-		ModelAndView newView = new ModelAndView("chart_line");
+		ModelAndView newView = new ModelAndView("chart_diagram");
 		return newView;
 	}
 	
