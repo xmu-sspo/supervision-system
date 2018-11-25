@@ -16,5 +16,5 @@ public interface SolrService {
 	public void addIndex() throws SolrServerException, IOException;
 	
 	//检索
-	public List<News> getSolrNews();
+	public List<News> getSolrNews(String params);
 }

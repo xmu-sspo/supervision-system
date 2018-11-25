@@ -146,7 +146,7 @@
                                     <label >发表时间：</label>
                                 </div>
                                 
-                                 <div class="am-form-group" id="author">
+                                 <!-- <div class="am-form-group" id="author">
                                     <label >作者：</label>
                                 </div>
                                 
@@ -160,7 +160,7 @@
                                 
                                 <div class="am-form-group" id="clickRate">
                                     <label >点击量：</label>
-                                </div>
+                                </div> -->
                                 
                                 <div class="am-form-group" id="content">
                                     <label >内容：</label>

@@ -155,8 +155,17 @@
               </tr>
               </thead>
               <tbody id="table_tbody">
-              
-
+              	<c:forEach items="${news}" var="newsItem">
+					<tr>
+						<td>${newsItem.id}</td>
+						<td>${newsItem.title}</td>					
+						<td>${newsItem.data_from}</td>
+						<td>${newsItem.content}</td>
+						<td>${newsItem.time}</td>
+						<td>${newsItem.click}</td>
+						<td><a href="${newsItem.url}">...</a></td>
+					</tr>
+				</c:forEach>
               </tbody>
             </table>
             <div class="am-cf" >

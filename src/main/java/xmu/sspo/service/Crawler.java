@@ -9,30 +9,30 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- * ÅÀ³æ¶¨Ê±Æ÷.
+ * å®šæ—¶çˆ¬è™«.
  * @author qinlingyun
  * @date 2018-11-18 17:16:37
  */
 @Component
 public class Crawler {
 	
-//	@Scheduled(fixedDelay=3000)//Ã¿ÈıÃëÅÜÒ»´Î
+//	@Scheduled(fixedDelay=3000)//æ¯ä¸‰åˆ†é’Ÿè·‘ä¸€æ¬¡
 	public void doCrawler() {
-		// ¶¨Ê±Æ÷²âÊÔ
+		// å®šæ—¶å™¨æµ‹è¯•
 		SimpleDateFormat formatTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
 		Object startTime = System.currentTimeMillis();
 		System.out.println(formatTime.format(startTime));
 		
-		// ÕıÊ½´úÂë
+		// çˆ¬å–å½“æ—¥æ–°é—»
 //		String commands[] = {"GuanchaSpider", "SinaSpider", "HuanqiuSpider", "BjnewsSpider"};		
 //		for(String exp: commands) {
-//			String command = "scrapy crawl " + exp;//cmdÃüÁî   	
-//	    	File scrapyPath = new File("D:\\sspo\\myScrapy\\MyScrapy");
+//			String command = "scrapy crawl " + exp;//cmdå‘½ä»¤
+//	    	File scrapyPath = new File("D:\\work\\myScrapy\\myScrapy");
 //	    	try { 
 //	    		SimpleDateFormat formatTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
 //	    		Object startTime = System.currentTimeMillis();
 //	    		System.out.println(formatTime.format(startTime));
-//	    		System.out.println("¿ªÊ¼ÅÀÈ¡"+exp);
+//	    		System.out.println("start:"+exp);
 //				
 //	    		Process process = Runtime.getRuntime().exec(command,null,scrapyPath);
 //	    		InputStream buffer = process.getInputStream();
@@ -42,7 +42,7 @@ public class Crawler {
 //	    		if(!process.isAlive()) {
 //	        		Object finishTime = System.currentTimeMillis();
 //	        		System.out.println(formatTime.format(finishTime));    			
-//	    			System.out.println("ÔËĞĞ½áÊø");
+//	    			System.out.println("finished:");
 //	    		}
 //			} catch (IOException e) {			
 //				e.printStackTrace();
@@ -50,7 +50,7 @@ public class Crawler {
 //		}
 		
 		
-		//·½°¸¶ş£º ÅÜmainº¯Êı
+		//æ–¹æ¡ˆäºŒ è·‘mainæ–¹æ³•
 //    	String command = "python main.py";
 //    	File scrapyPath = new File("C:/Users/admin/Desktop/sspo/myScrapy/MyScrapy/MyScrapy");
   	

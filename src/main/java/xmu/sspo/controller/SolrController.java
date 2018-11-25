@@ -44,7 +44,7 @@ public class SolrController {
 //	}
 	
 	@RequestMapping("/query")
-	public ModelAndView querySolr() {
+	public ModelAndView querySolr(String s1) {
 		
 //		try {
 //			solrService.addIndex();
@@ -54,10 +54,9 @@ public class SolrController {
 //		} catch (IOException e) {
 //			e.printStackTrace();
 //		}
-		ModelAndView newsView = new ModelAndView("news-list");	
-		List<News> tmpLists = solrService.getSolrNews();
+		ModelAndView newsView = new ModelAndView("table_complete");	
+		List<News> tmpLists = solrService.getSolrNews(s1);
 		newsView.addObject("news", tmpLists);
 		return newsView;
 	}
-	
 }

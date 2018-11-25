@@ -53,6 +53,8 @@ public class SolrServiceImpl implements SolrService{
 	public void addIndex() throws SolrServerException, IOException {
 		
 		List<String> month = getMonth();
+//		List<String> month = new ArrayList<>();
+//		month.add("201802");
 		for(String core:month)
 			try {
 				HttpSolrClient solrClient = new HttpSolrClient(SOLR_URL+core);
@@ -76,16 +78,18 @@ public class SolrServiceImpl implements SolrService{
 	}
 
 	@Override
-	public List<News> getSolrNews() {
+	public List<News> getSolrNews(String s1) {
 		List<String> solrCores = new ArrayList<>();
-		solrCores.addAll(getMonth());
+		solrCores.addAll(getMonth());		
+		solrCores.add("201802");
 		List<News> newsList = new ArrayList<>();
 		long numbers = 0;
+		
 		for(String core:solrCores) {
 			HttpSolrClient solrServer = new HttpSolrClient(SOLR_URL+core);  
 			ModifiableSolrParams query = new ModifiableSolrParams();
 			// 检索条件
-			String s1 = "总统国防访华习近平书记";
+//			String s1 = "总统国防访华习近平书记";
 			String params = "content:"+s1+" OR title:"+s1;
 //			String params = "*:*";
 			query.set("q", params);
