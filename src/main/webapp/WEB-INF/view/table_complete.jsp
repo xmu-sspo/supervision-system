@@ -164,7 +164,7 @@
 						<td>${newsItem.content}</td>
 						<td>${newsItem.time}</td>
 						<td>${newsItem.click}</td>
-						<td><a href="${newsItem.url}">...</a></td>
+						<td><a href="${newsItem.url}">查看原网址...</a></td>
 					</tr>
 				</c:forEach>
               </tbody>

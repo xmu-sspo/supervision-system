@@ -126,9 +126,9 @@
 	
 	                        <div class="col-lg-6" style="margin-top:20px;">
 	                            <div class="input-group">
-	                                <input type="text" class="form-control" id="keywords" value="美国总统和上海政府官员会面"> <!--  placeholder="请输入要查询的关键字">-->
+	                                <input type="text" class="form-control" id="keywords" placeholder="请输入关键词"> <!--  placeholder="请输入要查询的关键字">-->
 									<span class="input-group-btn">
-										<a href=""><button class="btn btn-default" id="search" type="button">检索</button></a>
+										<a href="/query"><button class="btn btn-default" id="search">检索</button></a>
 									</span>
 	                            </div><!-- /input-group -->
 	                        </div><!-- /.col-lg-6 -->
