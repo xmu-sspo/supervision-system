@@ -80,8 +80,8 @@ public class SolrServiceImpl implements SolrService{
 	@Override
 	public List<News> getSolrNews(String s1) {
 		List<String> solrCores = new ArrayList<>();
-		solrCores.addAll(getMonth());		
-		solrCores.add("201802");
+//		solrCores.addAll(getMonth());		
+		solrCores.add("201811");
 		List<News> newsList = new ArrayList<>();
 		long numbers = 0;
 		
@@ -123,7 +123,7 @@ public class SolrServiceImpl implements SolrService{
 	        List<News> tmpLists = response.getBeans(News.class);
 	       	newsList.addAll(tmpLists);
 		}
-		System.out.println(numbers);
+//		System.out.println(numbers);
 		return newsList;
 	}
 
