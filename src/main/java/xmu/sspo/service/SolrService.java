@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.solr.client.solrj.SolrServerException;
 
 import xmu.sspo.model.News;
+import xmu.sspo.model.NewsList;
 
 public interface SolrService {
 	
@@ -16,5 +17,5 @@ public interface SolrService {
 	public void addIndex() throws SolrServerException, IOException;
 	
 	//检索
-	public List<News> getSolrNews(String params);
+	public NewsList getSolrNews(String params);
 }
