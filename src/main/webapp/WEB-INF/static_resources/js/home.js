@@ -1,6 +1,10 @@
 /**
  * Created by 朱何莹 on 2018/7/5.
  */
+window.onload=function(){
+    $("#h4").html("舆情检索");
+}
+
 $(function(){
     update_history();
     // 绑定回车事件
