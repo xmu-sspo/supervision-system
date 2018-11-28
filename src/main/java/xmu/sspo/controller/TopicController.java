@@ -16,6 +16,7 @@ import javax.jms.JMSException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.NestedCheckedException;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -65,6 +66,12 @@ public class TopicController {
 	private News getOneNews(Long id) {
 		News news = newsService.get(id);
 		return news;	
+	}
+	
+	@RequestMapping("/add_user_topic")
+	private void addUserTopic(@RequestParam String topic_name, String keywords) {
+		System.out.println(topic_name);
+		System.out.println(keywords);
 	}
 	
 	

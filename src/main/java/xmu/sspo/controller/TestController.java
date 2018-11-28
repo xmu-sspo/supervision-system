@@ -1,14 +1,25 @@
 package xmu.sspo.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import xmu.sspo.model.NewsList;
+import xmu.sspo.model.Topic;
+import xmu.sspo.service.NewsService;
+
 @RestController
 public class TestController {
+	
+	@Autowired
+	private NewsService newsService;
 	
 	@RequestMapping("/home")
 	public ModelAndView homePage(){
@@ -16,9 +27,13 @@ public class TestController {
 		return newView;
 	}
 	
-	@RequestMapping("/table_complete")
+	@RequestMapping("/search_result")
 	public ModelAndView getSearch() {
-		ModelAndView newView = new ModelAndView("table_complete");
+		ModelAndView newView = new ModelAndView("search_result");
+		NewsList newsList = new NewsList();
+    	newsList.setNewsList(newsService.listNews(1));
+    	newsList.setTotal(newsService.getNewsCount());
+    	newView.addObject("news", newsList);
 		return newView;
 	}
 
@@ -28,21 +43,17 @@ public class TestController {
 		return newView;
 	}
 	
-	@RequestMapping("/table_basic")
+	@RequestMapping("/topic_list")
 	public ModelAndView getTable_basic() {
-		ModelAndView newView = new ModelAndView("table_basic");
+		ModelAndView newView = new ModelAndView("topic_list");
+		ArrayList<Topic> topic_list = newsService.getTopicList();
+		newView.addObject("topic_list", topic_list);
 		return newView;
 	}
 	
 	@RequestMapping("/chart_line")
 	public ModelAndView getChart_line() {
-		ModelAndView newView = new ModelAndView("chart_diagram");
-		return newView;
-	}
-	
-	@RequestMapping("/chart_columnar")
-	public ModelAndView getChart_columnar() {
-		ModelAndView newView = new ModelAndView("chart_columnar");
+		ModelAndView newView = new ModelAndView("chart_line");
 		return newView;
 	}
 	

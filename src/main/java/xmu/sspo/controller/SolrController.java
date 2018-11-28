@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import xmu.sspo.dao.NewsDao;
 import xmu.sspo.model.News;
+import xmu.sspo.model.NewsList;
 import xmu.sspo.model.Topic;
 import xmu.sspo.service.SolrService;
 
@@ -54,8 +55,8 @@ public class SolrController {
 //		} catch (IOException e) {
 //			e.printStackTrace();
 //		}
-		ModelAndView newsView = new ModelAndView("table_complete");	
-		List<News> tmpLists = solrService.getSolrNews(s1);
+		ModelAndView newsView = new ModelAndView("search_result");	
+		NewsList tmpLists = solrService.getSolrNews(s1);
 		newsView.addObject("news", tmpLists);
 		return newsView;
 	}
