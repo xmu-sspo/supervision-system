@@ -1,6 +1,7 @@
 package xmu.sspo.service.impl;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -23,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import xmu.sspo.dao.NewsDao;
 import xmu.sspo.model.News;
+import xmu.sspo.model.NewsList;
 import xmu.sspo.service.SolrService;
 
 @Component
@@ -78,11 +80,11 @@ public class SolrServiceImpl implements SolrService{
 	}
 
 	@Override
-	public List<News> getSolrNews(String s1) {
+	public NewsList getSolrNews(String s1) {
 		List<String> solrCores = new ArrayList<>();
 //		solrCores.addAll(getMonth());		
 		solrCores.add("201811");
-		List<News> newsList = new ArrayList<>();
+		NewsList newsList = new NewsList();
 		long numbers = 0;
 		
 		for(String core:solrCores) {
@@ -121,7 +123,8 @@ public class SolrServiceImpl implements SolrService{
 	        numbers = numbers+num;
 	        // 转换成实体对象
 	        List<News> tmpLists = response.getBeans(News.class);
-	       	newsList.addAll(tmpLists);
+	       	newsList.setNewsList(tmpLists);
+	       	newsList.setTotal(BigInteger.valueOf(tmpLists.size()));
 		}
 //		System.out.println(numbers);
 		return newsList;
