@@ -15,6 +15,12 @@ $(function(){
         var keywords = $("#keywords").val();
         history(keywords); //添加到缓存
         update_history(); //更新搜索历史
+        
+        //检索
+        $.ajax({
+        	url:"/query",
+        	data:{s1:keywords}
+        })        
     })
 
     // 清空搜索历史
@@ -88,7 +94,7 @@ var mystorage = (function mystorage(){
     var ms = "mystorage";
     var storage=window.localStorage;
     if(!window.localStorage){
-        alert("�������֧��localstorage");
+        alert("读取历史失败");
         return false;
     }
     var set = function(key,value){

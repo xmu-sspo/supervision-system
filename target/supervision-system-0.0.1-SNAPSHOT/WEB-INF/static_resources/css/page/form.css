@@ -55,12 +55,12 @@
 
 
 
-/*----------------------登录-----------------------*/
+/*----------------------鐧诲綍-----------------------*/
 .account-pages {
     height: 100%;
     width: 100%;
-    background:url(../../img/bg1.jpg) center !important;
-    background-size: cover;
+    background:url(/images/bg1.jpg) ;
+    background-size: contain;
 }
 .wrapper-page {
     margin: 5% auto;

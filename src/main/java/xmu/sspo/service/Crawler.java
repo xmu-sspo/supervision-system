@@ -1,4 +1,4 @@
-package xmu.sspo.service;
+﻿package xmu.sspo.service;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,7 +24,7 @@ public class Crawler {
 		System.out.println(formatTime.format(startTime));
 		
 		// 爬取当日新闻
-//		String commands[] = {"GuanchaSpider", "SinaSpider", "HuanqiuSpider", "BjnewsSpider"};		
+//		String commands[] = {"GuanchaSpider", "SinaSpider", "HuanqiuSpider", "BjnewsSpider", "TencentSpider"};		
 //		for(String exp: commands) {
 //			String command = "scrapy crawl " + exp;//cmd命令
 //	    	File scrapyPath = new File("D:\\work\\myScrapy\\myScrapy");

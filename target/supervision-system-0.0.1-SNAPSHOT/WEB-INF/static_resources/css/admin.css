@@ -3,10 +3,6 @@
  */
 
 
-/*
- fixed-layout 固定头部和边栏布局
-*/
-
 html,
 body {
   height: 100%;
@@ -223,6 +219,7 @@ ul {
     background: none;
     width: 290px;
     margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   .admin-offcanvas-bar {

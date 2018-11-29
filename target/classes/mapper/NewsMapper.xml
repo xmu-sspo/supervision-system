@@ -37,6 +37,15 @@
 		limit #{page},15
 	</select>
 	
+	<!-- 根据月份获取该月所有新闻 -->
+	<select id="listNewsPerMonth" resultType="news" parameterType="java.util.Map" statementType="STATEMENT">
+		
+		<![CDATA[
+			SELECT id,data_from,url,title,content,time,author,browse,comment,click
+			FROM `${month}`
+		]]>
+	</select>
+	
 	
 	<!-- 根据id列表获取新闻列表 -->
 	<select id="getNewsListByIdList" parameterType="java.util.List" resultMap="newsinfoMap">
