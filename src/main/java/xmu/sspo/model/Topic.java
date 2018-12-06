@@ -8,20 +8,18 @@ public class Topic {
 	int id;              //话题id
 	int center_index;               // 聚类中心索引
 	String title;            //话题标题
-	String date;         //话题产生的日期
 	String news_list;     //该话题包含的新闻
-	int label;           //标签（当天，三天，一周，一月）
+	String news_number;           //各个时段新闻条数列表，长度为24
 
 	public Topic() {}
 
-	public Topic(int id, int center_index, String title, String date, String news_list, int label) {
+	public Topic(int id, int center_index, String title, String news_list, String news_number) {
 		super();
 		this.id = id;
 		this.center_index = center_index;
 		this.title = title;
-		this.date = date;
 		this.news_list = news_list;
-		this.label = label;
+		this.news_number = news_number;
 	}
 
 	public int getId() {
@@ -48,14 +46,6 @@ public class Topic {
 		this.title = title;
 	}
 
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
-
 	public String getNews_list() {
 		return news_list;
 	}
@@ -64,15 +54,12 @@ public class Topic {
 		this.news_list = news_list;
 	}
 
-	public int getLabel() {
-		return label;
+	public String getNews_number() {
+		return news_number;
 	}
 
-	public void setLabel(int label) {
-		this.label = label;
+	public void setNews_number(String news_number) {
+		this.news_number = news_number;
 	}
-
-	
-
 		
 }

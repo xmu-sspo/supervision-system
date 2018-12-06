@@ -1,8 +1,5 @@
 ﻿package xmu.sspo.service;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 
 import org.springframework.scheduling.annotation.Scheduled;
@@ -16,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Crawler {
 	
-//	@Scheduled(fixedDelay=3000)//每三分钟跑一次
+	@Scheduled(fixedDelay=100000)//每十分钟跑一次
 	public void doCrawler() {
 		// 定时器测试
 		SimpleDateFormat formatTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 

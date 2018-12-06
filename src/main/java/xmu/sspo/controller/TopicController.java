@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.jms.JMSException;
 
@@ -31,13 +33,6 @@ public class TopicController {
 	
 	@Autowired
 	private NewsService newsService;
-	
-	@RequestMapping("/getTopicList")
-	@ResponseBody
-	public List<Topic> getTopicList() {		
-		ArrayList<Topic> topic_list = newsService.getTopicList();
-		return topic_list;
-	}
 	
 	@RequestMapping("/getNewsList")
 	@ResponseBody
@@ -74,5 +69,12 @@ public class TopicController {
 		System.out.println(keywords);
 	}
 	
+	@RequestMapping("/cycle_topic")
+	private List<Topic> listTopicCyclely(@RequestParam String cycle_name) {
+		Map<String, String> cycle = new HashMap<String, String>();
+		cycle.put("cycle", cycle_name);
+		List<Topic> topicList = newsService.listTopicCyclely(cycle);
+		return topicList;
+	}
 	
 }

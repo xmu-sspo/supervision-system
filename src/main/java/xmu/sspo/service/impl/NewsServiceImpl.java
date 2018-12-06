@@ -3,6 +3,7 @@ package xmu.sspo.service.impl;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,12 +30,6 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
-	public ArrayList<Topic> getTopicList() {
-		// TODO Auto-generated method stub
-		return topicDao.getTopicList();
-	}
-
-	@Override
 	public List<News> listNews(int page) {
 		
 		return newsDao.listNews(page);
@@ -48,5 +43,10 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public BigInteger getNewsCount() {
 		return newsDao.getNewsCount();
+	}
+
+	@Override
+	public ArrayList<Topic> listTopicCyclely(Map<String, String> cycle) {
+		return topicDao.listTopicCyclely(cycle);
 	}
 }

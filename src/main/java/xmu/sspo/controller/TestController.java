@@ -1,6 +1,8 @@
 package xmu.sspo.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,8 +48,6 @@ public class TestController {
 	@RequestMapping("/topic_list")
 	public ModelAndView getTable_basic() {
 		ModelAndView newView = new ModelAndView("topic_list");
-		ArrayList<Topic> topic_list = newsService.getTopicList();
-		newView.addObject("topic_list", topic_list);
 		return newView;
 	}
 	

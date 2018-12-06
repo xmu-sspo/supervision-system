@@ -6,20 +6,16 @@
          <result column="id" property="id"/>
          <result column="center_index" property="center_index"/>
          <result column="title" property="title"/>
-         <result column="date" property="date"/>
          <result column="news_list" property="news_list"/>
-         <result column="label" property="label"/>
+         <result column="news_number" property="news_number"/>
      </resultMap>
-     
-     <sql id="base_topic">
-		id,center_index,title,date,news_list,label
-	 </sql>
-     
-     <!-- 获取话题表内所有内容 -->
-     <select id="getTopicList" resultType="topic">
-		SELECT
-		<include refid="base_topic" />
-		FROM topic
+	
+	<!-- 获取周期性的话题列表 -->	
+	<select id="listTopicCyclely" resultType="topic" parameterType="java.util.Map" statementType="STATEMENT">	
+		<![CDATA[
+			SELECT id,center_index,title,news_list,news_number
+			FROM ${cycle}
+		]]>
 	</select>
      
 </mapper>

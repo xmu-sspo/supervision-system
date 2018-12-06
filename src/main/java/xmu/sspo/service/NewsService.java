@@ -3,6 +3,7 @@ package xmu.sspo.service;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import xmu.sspo.model.News;
 import xmu.sspo.model.Topic;
@@ -33,7 +34,11 @@ public interface NewsService {
 	 * @return long
 	 */
 	BigInteger getNewsCount();
-	
-	//获取话题表内所有的话题
-	ArrayList<Topic> getTopicList();
+		
+	/**
+	 * 获取周期性的话题列表
+	 * @param cycle
+	 * @return
+	 */
+	ArrayList<Topic> listTopicCyclely(Map<String, String> cycle);
 }

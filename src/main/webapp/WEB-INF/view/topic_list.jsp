@@ -14,24 +14,59 @@
 		<link rel="stylesheet" href="/css/admin.css" />
 		<link rel="stylesheet" href="/css/page/typography.css" />
 		<link rel="stylesheet" href="/css/page/form.css" />
-
+		<style>
+			#tabs{
+				width:500px;
+				height:40px;
+				margin:0;
+				padding:0;
+				margin-left: 1.5rem;
+			}
+			#tabs li{
+				list-style:none;
+				width:100px;
+				height:40px;
+				line-height:40px;
+				float:left;
+				background:#fff;
+				margin-right:20px;
+				text-align:center;
+				border-radius: 40px;
+				color: slategray;
+			}
+			#tabs li:hover{
+				cursor:pointer;
+				font-weight: bold;
+			}
+			#tabs .on{
+				font-weight:bold;
+			}
+			th,
+			td{
+				text-align:center;
+			}
+			.num{
+				width: 80px;
+				min-width: 80px;
+			}
+			.title{
+				width: 600px;
+				min-width: 250px;
+			}
+		</style>
 	</head>
 	<body>
-		<!-- Begin page -->
-		<jsp:include page="header.jsp" flush="true"/>
-		<!-- end page -->
-		
-		
+	  <jsp:include page="header.jsp" flush="true"/>		
 		<div class="admin">
-			<!-- sidebar start -->
-		    <jsp:include page="side_menu_bar.jsp" flush="true"/>	
-		    <!-- sidebar end -->
-		
-		
-		<!-- Start right Content here -->
-		<div class="content-page">
-			<!-- Start content -->
+		  <jsp:include page="side_menu_bar.jsp" flush="true"/>			
+		  <div class="content-page">
 			<div class="content">
+			    <ul id="tabs">
+			    	<li class="topic_this_day on">当天热点</li>
+			    	<li class="topic_three_days">三天内热点</li>
+			    	<li class="topic_this_week">一周内热点</li>
+			    	<li class="topic_this_month">一个月热点</li>
+			    </ul>
 				<!-- row start -->
 				<div class="am-g">					
 					<!-- col start -->
@@ -40,31 +75,18 @@
 							<table class="am-table  am-table-striped" id="topic_list">
 								    <thead>
 								        <tr>
-								            <th>话题序号</th>
-								            <th>标题</th>
-								            <th>数据库索引</th>
+								            <th class="num">话题序号</th>
+								            <th class="title">标题</th>
+								            <th class="num">数据库索引</th>
 								        </tr>
 								    </thead>
-								    <tbody id="table_tbody">
-								      <c:forEach items="${topic_list}" var="topicItem">
-										<tr>
-											<td>${topicItem.id}</td>
-											<td><a style='cursor:pointer' onclick="moredetails('${topicItem.news_list}')">${topicItem.title}</a></td>					
-											<td>${topicItem.center_index}</td>
-										</tr>
-									</c:forEach>  
-								    </tbody>
+								    <tbody id="table_tbody"></tbody>
 								</table>
-						</div>
+						</div> 
 					</div>
-					<!-- col end -->
-				</div>
-				<!-- row end -->
-
-				
+				</div>	
 			</div>
 		</div>
-		<!-- end right Content here -->
 		<!--</div>-->
 		</div>
 		</div>
@@ -77,9 +99,10 @@
 		<script type="text/javascript" src="/js/amazeui.min.js"></script>
 		<script type="text/javascript" src="/js/app.js" ></script>
 		<script type="text/javascript" src="/js/blockUI.js" ></script>
-
-
-
+		
 	</body>
+	<script>
+		
+	</script>
 	
 </html>
