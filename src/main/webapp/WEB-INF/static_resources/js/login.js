@@ -14,7 +14,7 @@ function checkuser(){
 		data:{username:username},
 		success:function(data){
 			if(password == data.password)
-				window.location.href="/table_basic?id=" + data.id;
+				window.location.href="/home";
 			else{
 				alert("密码不正确，请重新输入");
 				$("#password")[0].value="";

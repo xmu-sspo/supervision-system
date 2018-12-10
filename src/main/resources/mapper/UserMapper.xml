@@ -10,6 +10,14 @@
          <result column="role" property="role"/>
      </resultMap>
      
+     <resultMap type="xmu.sspo.model.UserTopic" id="userTopicMap">
+     	<result column="id" property="id"/>
+         <result column="user_id" property="user_id"/>
+         <result column="topic_name" property="topic_name"/>
+         <result column="keywords" property="keywords"/>
+         <result column="news_list" property="news_list"/>
+     </resultMap>
+     
      <sql id="base_user">
 		id,username,password,role
 	</sql>
@@ -32,5 +40,14 @@
 		u.id=#{id}
 	</select>
 	
+	<!--    说明:向user_topic表中插入用户关注的话题 -->
+	<insert id="insertUserTopic" ><!--  keyProperty="id" useGeneratedKeys="true">-->
+		insert into user_topic(user_id, topic_name, keywords) values (#{user_id,jdbcType=INTEGER}, #{topic_name,jdbcType=VARCHAR}, #{keywords,jdbcType=VARCHAR})
+	</insert>
+	
+	<!-- 获取用户关注的话题 -->
+	<select id="getUserTopic" resultMap="userTopicMap">
+		select * from user_topic where user_id=#{user_id}
+	</select>
 	
 </mapper>

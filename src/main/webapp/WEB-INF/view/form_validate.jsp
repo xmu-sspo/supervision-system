@@ -35,19 +35,19 @@
 					<!-- row start -->
 					<div class="card-box">
 						<h4 class="header-title m-t-0 m-b-30">添加感兴趣的话题</h4>
-						<form class="am-form" action="/add_user_topic">
+						<div class="am-form">
 						    <div class="am-form-group">
 						      <label for="doc-ipt-email-2">话题名称</label>
-						      <input name="topic_name" type="text" class="am-radius" id="doc-ipt-email-2" placeholder="请输入话题名称" value="贸易战">
+						      <input id="topic_name" type="text" class="am-radius" id="doc-ipt-email-2" placeholder="请输入话题名称" value="贸易战">
 						    </div>
 						
 						    <div class="am-form-group">
 						      <label for="doc-ipt-pwd-2">关键词列表（以全角“，”隔开）</label>
-						      <input name="keywords" type="text" class="am-radius" id="doc-ipt-pwd-2" placeholder="请输入该话题可能包含的关键词" value="美国，总统">
+						      <input id="keywords" type="text" class="am-radius" id="doc-ipt-pwd-2" placeholder="请输入该话题可能包含的关键词" value="美国，总统">
 						    </div>
 							
-						    <button type="submit" class="am-btn am-btn-primary">创建新话题</button>
-						</form>
+						    <button type="button" onclick="add_new_topic()" class="am-btn am-btn-primary">创建新话题</button>
+						</div>
 					</div>
 				</div>
 				</div>

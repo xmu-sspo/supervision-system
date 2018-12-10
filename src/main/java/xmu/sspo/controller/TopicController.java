@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.jms.JMSException;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.NestedCheckedException;
@@ -26,6 +27,7 @@ import xmu.sspo.model.News;
 import xmu.sspo.model.NewsList;
 import xmu.sspo.model.Topic;
 import xmu.sspo.service.NewsService;
+import xmu.sspo.service.UserService;
 
 
 @RestController
@@ -33,6 +35,9 @@ public class TopicController {
 	
 	@Autowired
 	private NewsService newsService;
+	@Autowired
+	private UserService UserService;
+	
 	
 	@RequestMapping("/getNewsList")
 	@ResponseBody
@@ -64,9 +69,14 @@ public class TopicController {
 	}
 	
 	@RequestMapping("/add_user_topic")
-	private void addUserTopic(@RequestParam String topic_name, String keywords) {
+	private void addUserTopic(@RequestParam String topic_name, @RequestParam String keywords, HttpServletRequest request) {
 		System.out.println(topic_name);
 		System.out.println(keywords);
+		keywords = keywords.replace("，", ",");
+		System.out.println(keywords);
+		int userId = (int) request.getSession().getAttribute("userId");
+		System.out.println(userId);
+		UserService.insertUserTopic(userId, topic_name, keywords);
 	}
 	
 	@RequestMapping("/cycle_topic")

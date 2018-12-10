@@ -1,3 +1,7 @@
+window.onload=function(){
+    $("#h4").html("发布平台分布");
+}
+
 (function(){
 	var pie = echarts.init(document.getElementById("pie"));
 	var option2 = {

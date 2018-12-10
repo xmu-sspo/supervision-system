@@ -8,7 +8,7 @@
 	                    <img src="/images/avatar-1.jpg" id="user_img" alt="user-img" title="1111" class="img-circle img-thumbnail img-responsive">
 	                    <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
 	                </div>
-	                <h5><a href="#" id="user_name_a">zhy</a> </h5>
+	                <h5><a href="#" id="user_name_a"><%=session.getAttribute("username")%></a> </h5>
 	                <ul class="list-inline">
 	                    <li>
 	                        <a href="#">
