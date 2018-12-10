@@ -40,5 +40,6 @@ public interface NewsService {
 	 * @param cycle
 	 * @return
 	 */
-	ArrayList<Topic> listTopicCyclely(Map<String, String> cycle);
+	List<Topic> listTopicCyclely(Map<String, String> cycle);
+
 }

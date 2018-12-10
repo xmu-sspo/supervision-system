@@ -10,8 +10,11 @@ public class Topic {
 	String title;            //话题标题
 	String news_list;     //该话题包含的新闻
 	String news_number;           //各个时段新闻条数列表，长度为24
+	int news_num;  // 相关新闻数量
 
-	public Topic() {}
+	public Topic() {
+		this.news_num = 0;
+	}
 
 	public Topic(int id, int center_index, String title, String news_list, String news_number) {
 		super();
@@ -20,6 +23,7 @@ public class Topic {
 		this.title = title;
 		this.news_list = news_list;
 		this.news_number = news_number;
+		this.news_num = 0;
 	}
 
 	public int getId() {
@@ -61,5 +65,20 @@ public class Topic {
 	public void setNews_number(String news_number) {
 		this.news_number = news_number;
 	}
+
+	public int getNews_num() {
+		return news_num;
+	}
+
+	public void setNews_num(int news_num) {
+		this.news_num = news_num;
+	}
+
+	@Override
+	public String toString() {
+		return "Topic [id=" + id + ", title=" + title + ", news_list=" + news_list + ", news_num=" + news_num + "]\n";
+	}
+	
+	
 		
 }

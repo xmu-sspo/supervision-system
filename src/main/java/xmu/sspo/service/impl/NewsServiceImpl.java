@@ -46,7 +46,13 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
-	public ArrayList<Topic> listTopicCyclely(Map<String, String> cycle) {
-		return topicDao.listTopicCyclely(cycle);
+	public List<Topic> listTopicCyclely(Map<String, String> cycle) {
+		List<Topic> topicList = topicDao.listTopicCyclely(cycle);
+		for(Topic topic : topicList) {
+			int num = topic.getNews_list().split(",").length;
+			topic.setNews_num(num);
+		}
+		return topicList;
 	}
+
 }

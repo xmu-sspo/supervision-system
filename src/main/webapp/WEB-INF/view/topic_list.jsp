@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>舆情监督系统</title>
 		<link rel="stylesheet" href="/css/amazeui.css" />
+		<link rel="stylesheet" href="/css/amazeui.datatables.css"/>
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/css/core.css" />
 		<link rel="stylesheet" href="/css/menu.css" />
@@ -21,6 +22,8 @@
 				margin:0;
 				padding:0;
 				margin-left: 1.5rem;
+				margin-top: 15px;
+				margin-bottom: 20px;
 			}
 			#tabs li{
 				list-style:none;
@@ -35,24 +38,46 @@
 				color: slategray;
 			}
 			#tabs li:hover{
-				cursor:pointer;
+				cursor: pointer;
 				font-weight: bold;
 			}
 			#tabs .on{
-				font-weight:bold;
+				font-weight: bold;
 			}
-			th,
+			thead th,
 			td{
-				text-align:center;
+				text-align: center;
+				vertical-align: middle;
 			}
-			.num{
-				width: 80px;
-				min-width: 80px;
+			th.title,
+			tbody tr td:nth-child(2){
+				text-align: left;
+			}
+			th.no,
+			th.num{
+				width: 130px;
+				min-width: 120px;
+			}
+			th#hot,
+			th#platform{
+				width: 130px;
 			}
 			.title{
-				width: 600px;
 				min-width: 250px;
 			}
+			.no::after,
+			.num::after{
+   				font-family: FontAwesome;
+			}
+			.am-u-md-11 {
+    			width: 100%;
+    		}
+    		#topic_list .sorting_asc::after {
+    			content:"\f0de";
+    		}
+    		#topic_list .sorting_desc::after {
+    			content:"\f0dd";
+    		}
 		</style>
 	</head>
 	<body>
@@ -68,16 +93,18 @@
 			    	<li class="topic_this_month">一个月热点</li>
 			    </ul>
 				<!-- row start -->
-				<div class="am-g">					
+				<div class="am-u-md-11">					
 					<!-- col start -->
-					<div class="am-u-md-11">
-						<div class="card-box">
-							<table class="am-table  am-table-striped" id="topic_list">
+					<div class="card-box">
+						<div class="am-g">
+							<table class="am-table am-table-striped am-table-bordered am-table-compact" id="topic_list">
 								    <thead>
 								        <tr>
-								            <th class="num">话题序号</th>
+								            <th class="no">话题序号</th>
 								            <th class="title">标题</th>
-								            <th class="num">数据库索引</th>
+								            <th class="num">相关新闻数</th>
+								            <th id="hot">话题热度分析</th>
+								            <th id="platform">话题发布平台分析</th>
 								        </tr>
 								    </thead>
 								    <tbody id="table_tbody"></tbody>
@@ -92,17 +119,17 @@
 		</div>
 		
 		<!-- navbar -->
-		<a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
+		<a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
 		
 		<script type="text/javascript" src="/js/jquery-2.1.0.js" ></script>
 		<script type="text/javascript" src="/js/topic_list.js" ></script>
 		<script type="text/javascript" src="/js/amazeui.min.js"></script>
+		<script type="text/javascript" src="/js/amazeui.datatables.min.js"></script>
 		<script type="text/javascript" src="/js/app.js" ></script>
 		<script type="text/javascript" src="/js/blockUI.js" ></script>
 		
 	</body>
-	<script>
-		
-	</script>
-	
 </html>
+
+
+

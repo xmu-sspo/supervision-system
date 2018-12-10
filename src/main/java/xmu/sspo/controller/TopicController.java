@@ -70,11 +70,13 @@ public class TopicController {
 	}
 	
 	@RequestMapping("/cycle_topic")
-	private List<Topic> listTopicCyclely(@RequestParam String cycle_name) {
+	private Map<String, Object> listTopicCyclely(@RequestParam String cycle_name) {
 		Map<String, String> cycle = new HashMap<String, String>();
 		cycle.put("cycle", cycle_name);
 		List<Topic> topicList = newsService.listTopicCyclely(cycle);
-		return topicList;
+		Map<String, Object> aaData = new HashMap<String, Object>();//dataTable动态更新ajax的数据格式
+		aaData.put("aaData", topicList);
+		return aaData;
 	}
 	
 }

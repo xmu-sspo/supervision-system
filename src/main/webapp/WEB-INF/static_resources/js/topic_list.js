@@ -33,42 +33,80 @@ function getUser(){
 	   });
 	}
 }
-	
-	
 
-//获取话题列表
-function getList(cycle_name) {
-	$.ajax({ 
-		type: 'GET',
-		url: '/cycle_topic',
-		dataType: 'json',
-		async:true,
-		data: {cycle_name: cycle_name},
-		success: function(data) {
-			topicList = data;
-			var str = '';
-			for(var i = 0; i < topicList.length; i ++) {
-				str += '<tr>' + 
-							'<td>' + topicList[i].id + '</td>' +
-							'<td>' + '<a style=\"cursor:pointer\" onclick=\"moredetails(\'' +topicList[i].news_list + '\')\">' + topicList[i].title + '</a></td> ' +				
-							'<td>' + topicList[i].center_index + '</td>' +
-						'</tr>';
-			}
-			$('#table_tbody').html(str)
-		}
-	})
-}
-getList('topic_this_day');//默认取当天热点话题
+//排序
+$(function() {
+	table = $('#topic_list').DataTable({
+		'bPaginate' : false,
+		'bLengthChange': false,
+		'bInfo' : false,
+		'bFilter' : false,
+//		'bSortable':false,
+		"order": [],
+		'ajax': {
+			'url':'/cycle_topic',
+			'type': 'POST',
+			'asyn':false,
+			'data':
+				function(){
+					cycle_name = $('#tabs .on').prop('class').split(' ')[0];
+					cycle = {'cycle_name': cycle_name};//这里可以调用一个方法，动态获取周期
+	                return cycle;
+	            },
+		  },
+		'columns': [
+		    { 
+		    	data: 'id',
+		    },
+		    { 
+		    	'sortable': false,
+		    	'data':  null,
+	    	    'render': function ( data, type, full, meta ) {
+	    	      return '<a style=\"cursor:pointer\" onclick=\"moredetails(\'' + data.news_list + '\')\">' + data.title + '</a>';
+	    	    }
+		    },
+		    { 
+		    	data: 'news_num',
+		    },
+		    {
+		    	data: null,
+		    	sortable:false,
+		    	render: function(data, type, full, meta) {
+		    		cycle_name = $('#tabs .on').prop('class').split(' ')[0];
+		    		str = '<a onclick=\"timeHot(\'' + data.news_list + '\',\'' + cycle_name + '\')\"><i class="fa fa-arrow-right"></i></a>';
+		    		return str;		    		
+		    	}	
+		    },
+		    {
+		    	data: 'news_list',
+		    	sortable: false,
+		    	render: function(data, type, full, meta) {
+		    		str = '<a onclick=\"platform(\'' + data + '\')\"><i class="fa fa-arrow-right"></i></a>';
+		    		return str;		    		
+		    	}	
+		    }
+		    
+	      ]
+	});
+
+});
 
 $('#tabs li').on('click', function(){
 	$('#tabs li').removeClass('on');			
 	cycle_name = $(this).prop('class');
 	$(this).addClass('on');			
-	getList(cycle_name);			
+	table.ajax.reload();
 });
-
 
 //查看某个话题中包含的具体新闻
 function moredetails(newsList){
 	window.location.href="/search_result?newsList="+newsList;
+}
+//话题热度分析
+function timeHot(list, cycle_name){
+//	window.location.href="/search_result?newsList="+newsList;
+}
+//话题发布平台分析
+function platform(newsList){
+//	window.location.href="/search_result?newsList="+newsList;
 }
