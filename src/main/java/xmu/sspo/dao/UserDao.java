@@ -21,4 +21,7 @@ public interface UserDao {
 	
 	//通过用户id获取该用户关注的所有话题
 	List<UserTopic> getUserTopic(int user_id);
+	
+	//根据id删除用户关注的话题
+	void deleteUserTopic(int id);
 }

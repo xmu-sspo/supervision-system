@@ -50,4 +50,9 @@
 		select * from user_topic where user_id=#{user_id}
 	</select>
 	
+	<!-- 根据id删除用户关注的话题 -->
+	<delete id="deleteUserTopic">
+		delete from user_topic where id=#{id}
+	</delete>
+	
 </mapper>

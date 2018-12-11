@@ -84,7 +84,6 @@ function loadAllNews(page){
 			//如果返回的列表为空
 			if(news_list.length==0){
 				 $("#table_tbody").append("The result is empty.");
-				 alert("empty");
 			}else{
 				$("#table_tbody").html("");
 				for(var i=0; i<news_list.length; i++){
@@ -158,7 +157,6 @@ function loadNewsList(){
 		//如果列表为空
 		if(news_list.length==0){
 			$("#table_tbody").append("The result is empty.");
-			 alert("empty");
 		}else{
 			$("#table_tbody").html("");
 			for(var i=0; i<news_list.length; i++){

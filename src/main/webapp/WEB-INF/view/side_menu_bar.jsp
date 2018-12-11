@@ -1,5 +1,8 @@
+<%@page import="org.springframework.web.servlet.ModelAndView"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@include file="/WEB-INF/common/taglibs.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 		<div class="admin-sidebar am-offcanvas  am-padding-10" id="admin-offcanvas">
 	        <div class="am-offcanvas-bar admin-offcanvas-bar">
 	            <!-- User -->
@@ -48,8 +51,8 @@
 	                <li class="admin-parent">
 	                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav5'}"><span class="am-icon-file"></span> 话题管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
 	                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav5">
-	                        <li><a href="/form_basic" class="am-cf"> 已关注话题</a></li>
-	                        <li><a href="/form_validate">话题定制</a></li>
+	                        <li><a href="/topic_of_concern" class="am-cf"> 已关注话题</a></li>
+	                        <li><a href="/topic_customization">话题定制</a></li>
 	                    </ul>
 	                </li>
 	                <li class="admin-parent">

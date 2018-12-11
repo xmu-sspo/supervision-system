@@ -10,7 +10,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>检索结果列表</title>
+		<title>舆情监督系统-检索结果列表</title>
 		<link rel="stylesheet" href="/css/amazeui.css" />
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/css/core.css" />
@@ -20,6 +20,11 @@
 		<link rel="stylesheet" href="/css/page/form.css" />
 	</head>
 	<body>
+	<% String username = (String)session.getAttribute("username");
+		if(username == null){
+			response.sendRedirect("login");
+		%>
+		<%}else{ %>
 		<!-- Begin page -->
 		<jsp:include page="header.jsp" flush="true"/>
 		<!-- end page -->
@@ -123,6 +128,7 @@
 		<script type="text/javascript" src="/js/amazeui.min.js"></script>
 		<script type="text/javascript" src="/js/app.js" ></script>
 		<script type="text/javascript" src="/js/blockUI.js" ></script>
+		<%}%>
 	</body>
 	
 </html>

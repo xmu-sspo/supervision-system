@@ -20,6 +20,11 @@
 
 </head>
 <body>
+<% String username = (String)session.getAttribute("username");
+		if(username == null){
+			response.sendRedirect("login");
+		%>
+		<%}else{ %>
 	<!-- Begin page -->
 	<jsp:include page="header.jsp" flush="true"/>
 	<!-- end page -->
@@ -88,10 +93,6 @@
 	<script type="text/javascript" src="/js/amazeui.min.js"></script>
 	<script type="text/javascript" src="/js/app.js" ></script>
 	<script type="text/javascript" src="/js/blockUI.js" ></script>
-
-
-	
-    
-
+<%}%>
 </body>
 </html>

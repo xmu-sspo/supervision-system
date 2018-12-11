@@ -46,11 +46,15 @@ public class UserController {
 	@ResponseBody
 	public List<UserTopic> getUserTopic(HttpServletRequest request){
 		int user_id = (int) request.getSession().getAttribute("userId");
-		System.out.println(user_id);
 		List<UserTopic> userTopics = userService.getUserTopic(user_id);
-		for(int i=0;i<userTopics.size();i++)
-			System.out.println(userTopics.get(i));
 		return userTopics;
+	}
+	
+	@RequestMapping("/delete_userTopic")
+	@ResponseBody
+	public void delete_userTopic(int id) {
+		System.out.println(id);
+		userService.deleteUserTopic(id);
 	}
 
 

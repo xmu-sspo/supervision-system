@@ -1,27 +1,23 @@
 package xmu.sspo.controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
 import xmu.sspo.model.NewsList;
-import xmu.sspo.model.Topic;
+import xmu.sspo.model.UserTopic;
 import xmu.sspo.service.NewsService;
+import xmu.sspo.service.UserService;
 
 @RestController
 public class TestController {
 	
 	@Autowired
 	private NewsService newsService;
+	@Autowired
+	private UserService userService;
 	
 	@RequestMapping("/home")
 	public ModelAndView homePage(){
@@ -63,15 +59,15 @@ public class TestController {
 		return newView;
 	}
 	
-	@RequestMapping("/form_validate")
+	@RequestMapping("/topic_customization")
 	public ModelAndView getForm_validate() {
-		ModelAndView newView = new ModelAndView("form_validate");
+		ModelAndView newView = new ModelAndView("topic_customization");
 		return newView;
 	}
 	
-	@RequestMapping("/form_basic")
-	public ModelAndView getForm_basic() {
-		ModelAndView newView = new ModelAndView("form_basic");
+	@RequestMapping("/topic_of_concern")
+	public ModelAndView getForm_basic(){
+		ModelAndView newView = new ModelAndView("topic_of_concern");
 		return newView;
 	}
 	

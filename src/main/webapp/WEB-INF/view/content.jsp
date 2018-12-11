@@ -11,12 +11,16 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/core.css" />
     <link rel="stylesheet" href="/css/menu.css" />
-    <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/admin.css" />
     <link rel="stylesheet" href="/css/page/typography.css" />
     <link rel="stylesheet" href="/css/page/form.css" />
 </head>
 <body>
+<% String username = (String)session.getAttribute("username");
+		if(username == null){
+			response.sendRedirect("login");
+		%>
+		<%}else{ %>
 <!-- Begin page -->
 	<jsp:include page="header.jsp" flush="true"/>
 	<!-- end page -->
@@ -113,6 +117,7 @@
 <script type="text/javascript" src="/js/amazeui.min.js"></script>
 <script type="text/javascript" src="/js/app.js" ></script>
 <script type="text/javascript" src="/js/blockUI.js" ></script>
+<%}%>
 </body>
 
 </html>

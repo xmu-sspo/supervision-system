@@ -38,7 +38,14 @@ public class UserServicempl implements UserService{
 	}
 	
 	//通过用户id获取该用户关注的所有话题
+	@Override
 	public List<UserTopic> getUserTopic(int user_id){
 		return userDao.getUserTopic(user_id);
+	}
+	
+	//根据id删除用户关注的话题
+	@Override
+	public void deleteUserTopic(int id) {
+		userDao.deleteUserTopic(id);
 	}
 }

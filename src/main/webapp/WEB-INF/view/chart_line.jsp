@@ -16,6 +16,11 @@
 
 </head>
 <body>
+<% String username = (String)session.getAttribute("username");
+		if(username == null){
+			response.sendRedirect("login");
+		%>
+		<%}else{ %>
 	<!-- Begin page -->
 	<jsp:include page="header.jsp" flush="true"/>
 	<!-- end page -->
@@ -44,9 +49,8 @@
 		<script type="text/javascript" src="/js/blockUI.js" ></script>
 		<script type="text/javascript" src="/js/charts/echarts.js" ></script>
 		<script type="text/javascript" src="/js/charts/lineCharts.js" ></script>
+		<%}%>
 	</body>
 	
 </html>
 
-</body>
-</html>

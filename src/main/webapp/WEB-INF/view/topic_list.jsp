@@ -81,6 +81,11 @@
 		</style>
 	</head>
 	<body>
+	<% String username = (String)session.getAttribute("username");
+		if(username == null){
+			response.sendRedirect("login");
+		%>
+		<%}else{ %>
 	  <jsp:include page="header.jsp" flush="true"/>		
 		<div class="admin">
 		  <jsp:include page="side_menu_bar.jsp" flush="true"/>			
@@ -127,7 +132,7 @@
 		<script type="text/javascript" src="/js/amazeui.datatables.min.js"></script>
 		<script type="text/javascript" src="/js/app.js" ></script>
 		<script type="text/javascript" src="/js/blockUI.js" ></script>
-		
+		<%}%>
 	</body>
 </html>
 
