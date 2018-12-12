@@ -4,9 +4,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import xmu.sspo.model.NewsList;
+import xmu.sspo.model.Topic;
 import xmu.sspo.model.UserTopic;
 import xmu.sspo.service.NewsService;
 import xmu.sspo.service.UserService;
@@ -46,7 +48,7 @@ public class TestController {
 		ModelAndView newView = new ModelAndView("topic_list");
 		return newView;
 	}
-	
+ 	
 	@RequestMapping("/chart_line")
 	public ModelAndView getChart_line() {
 		ModelAndView newView = new ModelAndView("chart_line");

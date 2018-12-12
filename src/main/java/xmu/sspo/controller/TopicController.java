@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import xmu.sspo.model.News;
 import xmu.sspo.model.NewsList;
@@ -87,6 +88,19 @@ public class TopicController {
 		Map<String, Object> aaData = new HashMap<String, Object>();//dataTable动态更新ajax的数据格式
 		aaData.put("aaData", topicList);
 		return aaData;
+	}
+	
+	@RequestMapping("/getLineImg")
+	@ResponseBody
+	public Topic getChartline(@RequestParam int id, @RequestParam String cycle) {
+		Topic topic = newsService.getTopicImg(id, cycle);
+		return topic;
+	}
+	
+	@RequestMapping("/getPieImg")
+	public Topic getChartpie(@RequestParam int id, @RequestParam String cycle) {
+		Topic topic = newsService.getTopicImg(id, cycle);
+		return topic;
 	}
 	
 }

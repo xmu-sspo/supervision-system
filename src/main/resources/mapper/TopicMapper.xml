@@ -8,14 +8,22 @@
          <result column="title" property="title"/>
          <result column="news_list" property="news_list"/>
          <result column="news_number" property="news_number"/>
+         <result column="platform_number" property="platform_number"/>
      </resultMap>
 	
 	<!-- 获取周期性的话题列表 -->	
 	<select id="listTopicCyclely" resultType="topic" parameterType="java.util.Map" statementType="STATEMENT">	
 		<![CDATA[
-			SELECT id,center_index,title,news_list,news_number
+			SELECT id,center_index,title,news_list,news_number,platform_number
 			FROM ${cycle}
 		]]>
 	</select>
      
+     <select id="getTopicImg" resultType="topic" parameterType="java.util.Map" statementType="STATEMENT">	
+		<![CDATA[
+			SELECT id,center_index,title,news_list,news_number,platform_number
+			FROM ${cycle}
+			where id=${id}
+		]]>
+	</select>
 </mapper>

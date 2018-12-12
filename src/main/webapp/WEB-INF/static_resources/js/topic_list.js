@@ -73,16 +73,17 @@ $(function() {
 		    	sortable:false,
 		    	render: function(data, type, full, meta) {
 		    		cycle_name = $('#tabs .on').prop('class').split(' ')[0];
-		    		str = '<a onclick=\"timeHot(\'' + data.news_list + '\',\'' + cycle_name + '\')\"><i class="fa fa-arrow-right"></i></a>';
+		    		str = '<a onclick=\"timeHot(\'' + data.id + '\',\'' + cycle_name + '\')\"><i class="fa fa-arrow-right"></i></a>';
 		    		return str;		    		
 		    	}	
 		    },
 		    {
-		    	data: 'news_list',
+		    	data: null,
 		    	sortable: false,
 		    	render: function(data, type, full, meta) {
-		    		str = '<a onclick=\"platform(\'' + data + '\')\"><i class="fa fa-arrow-right"></i></a>';
-		    		return str;		    		
+		    		cycle_name = $('#tabs .on').prop('class').split(' ')[0];
+		    		str = '<a onclick=\"platform(\'' + data.id + '\',\'' + cycle_name + '\')\"><i class="fa fa-arrow-right"></i></a>';
+		    		return str;	
 		    	}	
 		    }
 		    
@@ -103,10 +104,10 @@ function moredetails(newsList){
 	window.location.href="/search_result?newsList="+newsList;
 }
 //话题热度分析
-function timeHot(list, cycle_name){
-//	window.location.href="/search_result?newsList="+newsList;
+function timeHot(id, cycle_name){
+	window.location.href="/chart_line?id="+id+"&cycle="+cycle_name;
 }
 //话题发布平台分析
-function platform(newsList){
-//	window.location.href="/search_result?newsList="+newsList;
+function platform(id, cycle_name){
+	window.location.href="/chart_pie?id="+id+"&cycle="+cycle_name;
 }

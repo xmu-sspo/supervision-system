@@ -41,5 +41,7 @@ public interface NewsService {
 	 * @return
 	 */
 	List<Topic> listTopicCyclely(Map<String, String> cycle);
+	
+	Topic getTopicImg(int id, String cycle);
 
 }

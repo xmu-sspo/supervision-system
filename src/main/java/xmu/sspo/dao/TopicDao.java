@@ -3,8 +3,7 @@ package xmu.sspo.dao;
 import java.util.ArrayList;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.apache.ibatis.annotations.Param;
 
 import xmu.sspo.model.News;
 import xmu.sspo.model.Topic;
@@ -21,4 +20,6 @@ public interface TopicDao {
 	 * @return
 	 */
 	ArrayList<Topic> listTopicCyclely(Map<String, String> cycle);
+	
+	Topic getTopicImg(@Param("id") int id, @Param("cycle") String cycle);
 }

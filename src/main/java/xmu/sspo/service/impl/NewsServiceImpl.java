@@ -2,6 +2,7 @@ package xmu.sspo.service.impl;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -53,6 +54,12 @@ public class NewsServiceImpl implements NewsService {
 			topic.setNews_num(num);
 		}
 		return topicList;
+	}
+	
+	@Override
+	public Topic getTopicImg(int id, String cycle) {
+		Topic topic = topicDao.getTopicImg(id, cycle);
+		return topic;
 	}
 
 }
