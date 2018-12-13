@@ -22,5 +22,5 @@ public interface UserService {
 	
 	//根据id删除用户关注的话题
 	void deleteUserTopic(int id);
-	
+
 }

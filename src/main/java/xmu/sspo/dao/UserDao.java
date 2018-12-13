@@ -21,7 +21,13 @@ public interface UserDao {
 	
 	//通过用户id获取该用户关注的所有话题
 	List<UserTopic> getUserTopic(int user_id);
+		
+	//获取所有用户定制话题
+	List<UserTopic> getAllUserTopic();
 	
 	//根据id删除用户关注的话题
 	void deleteUserTopic(int id);
+	
+	// 更新用户话题相关的新闻
+	void updateUserTopic(@Param("id") int id, @Param("news_list") String news_list);
 }

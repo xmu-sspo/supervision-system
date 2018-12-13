@@ -2,19 +2,22 @@ package xmu.sspo.service.impl;
 
 import java.util.List;
 
-import org.aspectj.apache.bcel.generic.ReturnaddressType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import xmu.sspo.dao.UserDao;
 import xmu.sspo.model.User;
 import xmu.sspo.model.UserTopic;
+import xmu.sspo.service.SolrService;
 import xmu.sspo.service.UserService;
 
 @Service
 public class UserServicempl implements UserService{
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	private SolrService solrService;
 
 	//通过用户名获取用户
 	@Override
@@ -48,4 +51,5 @@ public class UserServicempl implements UserService{
 	public void deleteUserTopic(int id) {
 		userDao.deleteUserTopic(id);
 	}
+
 }

@@ -60,4 +60,7 @@ public class SolrController {
 		newsView.addObject("news", tmpLists);
 		return newsView;
 	}
+	
+	
+	
 }

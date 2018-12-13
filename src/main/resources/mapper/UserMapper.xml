@@ -50,9 +50,19 @@
 		select * from user_topic where user_id=#{user_id}
 	</select>
 	
+	<!-- 获取所有用户定制话题 -->
+	<select id="getAllUserTopic" resultMap="userTopicMap">
+		select * from user_topic
+	</select>
+	
 	<!-- 根据id删除用户关注的话题 -->
 	<delete id="deleteUserTopic">
 		delete from user_topic where id=#{id}
 	</delete>
+		
+	<!-- 更新用户话题相关的新闻 -->
+	<update id="updateUserTopic">
+		update user_topic set news_list = #{news_list} where id = #{id}
+	</update>
 	
 </mapper>

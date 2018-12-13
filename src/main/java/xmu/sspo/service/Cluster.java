@@ -5,12 +5,17 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.annotation.Schedules;
 import org.springframework.stereotype.Component;
 
+import xmu.sspo.dao.UserDao;
+import xmu.sspo.model.News;
 import xmu.sspo.model.Topic;
+import xmu.sspo.model.UserTopic;
 
 @Component
 public class Cluster {
@@ -112,6 +117,27 @@ public class Cluster {
             e.printStackTrace();
         } 
 
+	}
+	@Autowired
+	private UserDao userDao;
+	
+	@Autowired
+	private SolrService solrService;
+	
+	@Scheduled(cron="0 0 0/1 * * ? ") // 用户定制话题定时检索，每小时检索一次
+	public void updateUserTopic() {		
+		List<UserTopic> userTopicList = userDao.getAllUserTopic();
+		String news_list = "";
+		for(UserTopic userTopic : userTopicList) {
+			String keywords = userTopic.getKeywords();
+			String key = keywords.replace(",", " ");
+			List<News> newsList = solrService.getSolrNews(key).getNewsList();//检索			
+			for(News newsDemo : newsList) {
+				Long newsId = newsDemo.getId();
+				news_list = news_list + newsId + ",";
+			}
+			userDao.updateUserTopic(userTopic.getId(), news_list.substring(0, news_list.length()-1));
+		}						
 	}
 	
 	
