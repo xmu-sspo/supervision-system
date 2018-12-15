@@ -1,16 +1,17 @@
 package xmu.sspo.controller;
 
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.mysql.jdbc.StringUtils;
+
 import xmu.sspo.model.NewsList;
-import xmu.sspo.model.Topic;
-import xmu.sspo.model.UserTopic;
 import xmu.sspo.service.NewsService;
+import xmu.sspo.service.SolrService;
 import xmu.sspo.service.UserService;
 
 @RestController
@@ -20,6 +21,8 @@ public class TestController {
 	private NewsService newsService;
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private SolrService solrService;
 	
 	@RequestMapping("/home")
 	public ModelAndView homePage(){
@@ -28,12 +31,18 @@ public class TestController {
 	}
 	
 	@RequestMapping("/search_result")
-	public ModelAndView getSearch() {
+	public ModelAndView getSearch(String keywords) {
 		ModelAndView newView = new ModelAndView("search_result");
-		NewsList newsList = new NewsList();
-    	newsList.setNewsList(newsService.listNews(1));
-    	newsList.setTotal(newsService.getNewsCount());
-    	newView.addObject("news", newsList);
+		
+		if(!StringUtils.isNullOrEmpty(keywords)) { //检索
+			NewsList tmpLists = solrService.getSolrNews(keywords);
+			newView.addObject("news", tmpLists);
+		} else {
+			NewsList newsList = new NewsList();
+	    	newsList.setNewsList(newsService.listNews(1));
+	    	newsList.setTotal(newsService.getNewsCount());
+	    	newView.addObject("news", newsList);
+		}		
 		return newView;
 	}
 

@@ -4,7 +4,7 @@
 window.onload=function(){
     $("#h4").html("舆情检索");
 }
-
+var keywords;
 $(function(){
     update_history();
     // 绑定回车事件
@@ -16,19 +16,12 @@ $(function(){
 
     // 搜索点击事件
     $("#search").click(function(){
-        var keywords = $("#keywords").val();
+    	keywords = $("#keywords").val();
         
         history(keywords); //添加到缓存
         update_history(); //更新搜索历史
-        
         //检索
-        $.ajax({
-        	url:"/query",
-        	data:{s1:keywords},
-        	success:function(data){
-        		alert("success");
-        	}
-        });       
+        window.location.href = '/search_result?keywords=' + keywords;       
     })
 
     // 清空搜索历史
@@ -38,12 +31,14 @@ $(function(){
     })
 })
 
+
+
 /**
  * [update_history 更新搜索历史]
  * @return {[type]} [description]
  */
 function update_history(){
-    console.log(mystorage.get("keywords"));
+//    console.log(mystorage.get("keywords"));
     var history = mystorage.get("keywords");
     if (history) {
         var html = "";

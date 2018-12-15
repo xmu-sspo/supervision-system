@@ -51,7 +51,7 @@
 	                            <div class="input-group">
 	                                <input type="text" class="form-control" id="keywords" placeholder="请输入关键词"> <!--  placeholder="请输入要查询的关键字">-->
 									<span class="input-group-btn">
-										<a href="/query"><button class="btn btn-default" id="search">检索</button></a>
+										<button class="btn btn-default" id="search">检索</button>
 									</span>
 	                            </div><!-- /input-group -->
 	                        </div><!-- /.col-lg-6 -->

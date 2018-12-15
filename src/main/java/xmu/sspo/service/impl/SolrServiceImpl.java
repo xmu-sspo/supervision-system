@@ -85,6 +85,7 @@ public class SolrServiceImpl implements SolrService{
 //		solrCores.addAll(getMonth());		
 		solrCores.add("201811");
 		NewsList newsList = new NewsList();
+		List<News> listNews = new ArrayList<>();
 		long numbers = 0;
 		
 		for(String core:solrCores) {
@@ -123,10 +124,11 @@ public class SolrServiceImpl implements SolrService{
 	        numbers = numbers+num;
 	        // 转换成实体对象
 	        List<News> tmpLists = response.getBeans(News.class);
-	       	newsList.setNewsList(tmpLists);
-	       	newsList.setTotal(BigInteger.valueOf(tmpLists.size()));
+	        listNews.addAll(tmpLists);
 		}
 //		System.out.println(numbers);
+		newsList.setNewsList(listNews);
+		newsList.setTotal(BigInteger.valueOf(numbers));
 		return newsList;
 	}
 
