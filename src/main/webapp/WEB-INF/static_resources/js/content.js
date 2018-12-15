@@ -1,4 +1,5 @@
 window.onload = function(){
+	$("#h4").html("新闻详情");
 	var thisURL = document.URL; 
 	var showval;
 	if(thisURL.indexOf("?")>=0){

@@ -93,6 +93,7 @@
 		<script type="text/javascript" src="/js/app.js" ></script>
 		<script type="text/javascript" src="/js/blockUI.js" ></script>
 		<script type="text/javascript" src="/js/topic_of_concern.js" ></script>
+		<script type="text/javascript" src="/js/search_header.js"></script>
 		<%}%>
 	</body>
 	

@@ -94,8 +94,8 @@ public class Cluster {
 
 	}
 	
-	//对当天的新闻进行聚类，2分钟一次
-//	@Scheduled(cron="0/120 * * * * ?")
+	//对当天的新闻进行聚类，1小时一次
+//	@Scheduled(cron=""0 0 0/1 * * ? "")
 	public void today_Cluster() {
 		System.out.println("today_cluster");
 		String[] args1 = new String[] { "python", "D:\\莹\\大创\\舆情监督\\中文分词\\new_kmeans.py", String.valueOf(1)}; 

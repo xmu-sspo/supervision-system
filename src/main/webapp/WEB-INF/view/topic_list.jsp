@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>舆情监督系统</title>
+		<title>舆情监督系统-话题列表</title>
 		<link rel="stylesheet" href="/css/amazeui.css" />
 		<link rel="stylesheet" href="/css/amazeui.datatables.css"/>
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -132,6 +132,7 @@
 		<script type="text/javascript" src="/js/amazeui.datatables.min.js"></script>
 		<script type="text/javascript" src="/js/app.js" ></script>
 		<script type="text/javascript" src="/js/blockUI.js" ></script>
+		<script type="text/javascript" src="/js/search_header.js"></script>
 		<%}%>
 	</body>
 </html>

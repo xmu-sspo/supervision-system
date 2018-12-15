@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>关键词搜索</title>
+    <title>舆情监督系统-热度变化趋势</title>
     <link rel="stylesheet" href="/css/amazeui.css" />
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/core.css" />
@@ -49,6 +49,7 @@
 		<script type="text/javascript" src="/js/blockUI.js" ></script>
 		<script type="text/javascript" src="/js/charts/echarts.js" ></script>
 		<script type="text/javascript" src="/js/charts/lineCharts.js" ></script>
+		<script type="text/javascript" src="/js/search_header.js"></script>
 		<%}%>
 	</body>
 	

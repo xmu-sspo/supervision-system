@@ -67,7 +67,8 @@
 		<script type="text/javascript" src="/js/amazeui.min.js"></script>
 		<script type="text/javascript" src="/js/app.js" ></script>
 		<script type="text/javascript" src="/js/blockUI.js" ></script>
-		<script type="text/javascript" src="/js/form_validate.js" ></script>
+		<script type="text/javascript" src="/js/topic_customization.js" ></script>
+		<script type="text/javascript" src="/js/search_header.js"></script>
 		<%}%>
 	</body>
 	

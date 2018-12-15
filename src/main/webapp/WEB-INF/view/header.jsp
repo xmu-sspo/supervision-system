@@ -16,8 +16,8 @@
             <li class="inform"><i class="am-icon-bell-o" aria-hidden="true"></i></li>
             <li class="hidden-xs am-hide-sm-only">
                 <form role="search" class="app-search">
-                    <input type="text" placeholder="Search..." class="form-control">
-                    <a href=""><img src="/images/search.png"></a>
+                    <input type="text" placeholder="Search..." class="form-control" id="search_header">
+                    <a href="javascript:search_header_a()"><img src="/images/search.png"></a>
                 </form>
             </li>
         </ul>

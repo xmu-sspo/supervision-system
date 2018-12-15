@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>关键词搜索</title>
+    <title>舆情监督系统--舆情检索</title>
 
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/home.css">
@@ -93,6 +93,7 @@
 	<script type="text/javascript" src="/js/amazeui.min.js"></script>
 	<script type="text/javascript" src="/js/app.js" ></script>
 	<script type="text/javascript" src="/js/blockUI.js" ></script>
+	<script type="text/javascript" src="/js/search_header.js"></script>
 <%}%>
 </body>
 </html>
